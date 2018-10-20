@@ -1,0 +1,35 @@
+.container {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: 25% 25% 25% 25%;
+  border: 5px solid red;
+  height: 100vh;
+}
+
+#g-one {
+  display: inline-grid;
+  grid-template-rows: 10% 90%;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 4;
+}
+
+#g-two {
+  display: inline-grid;
+  grid-template-columns: 49% 49%;
+  grid-column-gap: 2%;
+}
+
+#favorites {
+  background-color: aqua;
+  height: 100%;
+}
+
+#trending {
+  background-color: aquamarine;
+  height: 100%;
+}
