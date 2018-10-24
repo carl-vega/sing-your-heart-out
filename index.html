@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <!-- Added link to the jQuery Library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <title>Ask Word Smiths</title>
 </head>
@@ -21,8 +22,11 @@
     <div id="g-one">
       <!-- initial search bar -->
       <form id="search-1">
-        <textarea type="submit" class="materialize-textarea center-align"></textarea>
+        <div class="input-field">
+          <input type="text" class="materialize-textarea center-align" id="search-field">
+        </div>
       </form>
+      <button id="search-button">search</button>
       <!-- favorites section -->
       <div id="g-two">
         <div class="card" id="favorites">
@@ -43,7 +47,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </form>
   </div>
   <!-- main page container-cv -->
   <div class="container hide">
