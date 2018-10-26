@@ -10,10 +10,6 @@ firebase.initializeApp(config);
 
 let database = firebase.database();
 
-function sortTrendingSearches(){
-    database.ref('trending').orderByChild('counter');
-};
-
-$(document).on('click', '.option-button', function(){
+$('#favorite-button').on('click', function(){
     
 })
