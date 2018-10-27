@@ -19,3 +19,6 @@ main {
   top: 10%;
   transform: scaleX(1) scaleY(1);
 }
+/* #slide-out {
+  transform: translateX(0%);
+} */
