@@ -34,7 +34,7 @@ database.ref().on('child_added', function(childSnapshot){
     favListItem.append(favTag);
 
     $('#slide-out').append(favListItem);
-    $('#favorites').append(favListItem);
+    // $('#favorites').append(favListItem);
 });
 
 $(document).on('click', '.favorites-button', function (event) {
@@ -46,4 +46,23 @@ $(document).on('click', '.favorites-button', function (event) {
     $('#search-field').val("");
     submitFunction(event);
     counter = 0;
+});
+
+database.ref().on('child_added', function(childSnapshot){
+    console.log(childSnapshot.val());
+    let favArtist = childSnapshot.val().artist;
+    let favTrack = childSnapshot.val().track;
+    let key = childSnapshot.key;
+
+    let favListItem = $('<li>');
+    let favTag = $('<a>');
+    favTag.addClass('favorites-button waves-effect waves-red btn-flat');
+    favTag.attr('data-artist', favArtist);
+    favTag.attr('data-track', favTrack);
+    favTag.attr('data-key', key);
+    favTag.text(favArtist +' - '+ favTrack);
+    favListItem.append(favTag);
+
+    // $('#slide-out').append(favListItem);
+    $('#favorites').append(favListItem);
 });
