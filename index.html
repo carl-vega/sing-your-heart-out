@@ -34,15 +34,19 @@
                 <li class="tab col s6"><a href="#q-track">Track</a></li>
               </ul>
             </div>
-            <div id="option-area-artist" class="col s12">Artist</div>
-            <div id="option-area-track" class="col s12">Track</div>
+            <div id="option-area-artist" class="col s12">
+
+            </div>
+            <div id="option-area-track" class="col s12">
+
+            </div>
           </div>
         </div>
       </div>
       <!-- favorites section -->
       <div class="row">
         <div class="col s12" id="g-two">
-          <div class="card col s6" id="favorites">
+          <div class="card col s8 offset-s2" id="favorites">
             <div class="card-title">
               <h5 class="center-align">Favorites</h5>
               <span placeholder="Save your Favorites for later"></span>
@@ -51,13 +55,13 @@
             </div>
           </div>
           <!-- trending section -->
-          <div class="card col s6" id="trending">
+          <!-- <div class="card col s6" id="trending">
             <div class="card-title">
               <h5 class="center-align">Trending</h5>
             </div>
             <div class="card-content">
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -66,8 +70,7 @@
     <div class="row hide" id="top-3">
       <!-- youtube column-cv -->
       <div class="col s12 card" id="youtube">
-        <h3>Youtube</h3>
-        <div class="input-group">
+        <!-- <div class="input-group">
           <div class="input-group-prepend">
             <span class="input-group-text" id="inputGroup-sizing-sm"></span>
           </div>
@@ -75,10 +78,12 @@
             id="userInput">
           <input class="btn btn-primary" type="submit" value="Submit" id="submit">
           <input class="btn btn-primary" type="submit" value="Did not Work" id="noWork">
-        </div>
+        </div> -->
         <div id="videoDiv">
           <iframe id="video" width="560" height="315" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </div>
+        <a class="btn-floating halfway-fab waves-effect waves-light red" type="submit" value="Did not Work" id="noWork"><i
+          class="material-icons">skip_next</i></a>
       </div>
     </div>
     <!-- bottom row-cv -->
@@ -105,6 +110,7 @@
   <!--MusixMatch Javascript-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="assets/javascript/musixmatch.js"></script>
+  <script type="text/javascript" src="assets/javascript/youtube.js"></script>
 </body>
 </html>
 <!-- <!doctype html>
