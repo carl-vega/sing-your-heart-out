@@ -51,10 +51,13 @@ $("#search-1").on("submit", function(event) {
   });
 });
 
-$(document).on("click", ".option-button", function(event) {
+$(document).on("click", ".option-button, .favorites-button", function(event) {
 
   var id = $(this).attr("data-id");
   console.log(id);
+
+  // Empty lyrics div for new lyrics
+  $("#lyrics").empty();
 
   $.ajax({
     type: "GET",
