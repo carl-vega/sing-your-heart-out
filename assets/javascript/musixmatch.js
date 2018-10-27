@@ -20,7 +20,7 @@ $("#search-1").on("submit", function(event) {
       callback: "jsonp_callback"
     },
     url:
-      "https://api.musixmatch.com/ws/1.1/track.search?f_lyrics_language=en&f_has_lyrics&q_track=",
+      "https://api.musixmatch.com/ws/1.1/track.search?f_lyrics_language=en&f_has_lyrics&s_track_rating=desc&q_track=",
     dataType: "jsonp",
     jsonpCallback: "jsonp_callback",
     contentType: "application/json"
@@ -29,6 +29,7 @@ $("#search-1").on("submit", function(event) {
     for (let i = 0; i < 10; i++) {
       let track = data.message.body.track_list[i].track.track_name;
       let artist = data.message.body.track_list[i].track.artist_name;
+      let trackId = data.message.body.track_list[i].track.track_id;
 
       let newRow = $("<tr>");
       let newTH = $("<th>");
@@ -39,6 +40,7 @@ $("#search-1").on("submit", function(event) {
       newTag.addClass("option-button waves-effect waves-red btn-flat");
       newTag.attr("data-artist", artist);
       newTag.attr("data-track", track);
+      newTag.attr("data-id", trackId);
       newTag.text("Select");
       newRow
         .append(newTag)
@@ -48,3 +50,38 @@ $("#search-1").on("submit", function(event) {
     }
   });
 });
+
+$(document).on("click", ".option-button", function(event) {
+
+  var id = $(this).attr("data-id");
+  console.log(id);
+
+  $.ajax({
+    type: "GET",
+    data: {
+      apikey: "424fd241877633888bbe33c4d8ce3c72",
+      track_id: id,
+      format: "jsonp",
+      callback: "jsonp_callback"
+    },
+    url:
+      "https://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id=",
+    dataType: "jsonp",
+    jsonpCallback: "jsonp_callback",
+    contentType: "application/json"
+  }).then(function(data) {
+
+    var lyrics = data.message.body.lyrics.lyrics_body;
+    var lyricPre = $("<pre>");
+
+    lyricPre.text(lyrics);
+
+    $("#lyrics").append(lyricPre);
+
+    console.log(lyrics);
+  });
+
+  
+});
+
+
