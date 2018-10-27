@@ -34,6 +34,7 @@ database.ref().on('child_added', function(childSnapshot){
     favListItem.append(favTag);
 
     $('#slide-out').append(favListItem);
+    $('#favorites').append(favListItem);
 });
 
 $(document).on('click', '.favorites-button', function (event) {
