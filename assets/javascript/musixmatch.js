@@ -29,6 +29,7 @@ $("#search-1").on("submit", function(event) {
     for (let i = 0; i < 10; i++) {
       let track = data.message.body.track_list[i].track.track_name;
       let artist = data.message.body.track_list[i].track.artist_name;
+      let trackId = data.message.body.track_list[i].track.track_id;
 
       let newRow = $("<tr>");
       let newTH = $("<th>");
@@ -38,6 +39,7 @@ $("#search-1").on("submit", function(event) {
       newTH.text(artist);
       newTag.addClass("option-button waves-effect waves-red btn-flat");
       newTag.attr("data-artist", artist);
+      newTag.attr("data-trackId", trackId);
       newTag.attr("data-track", track);
       newTag.text("Select");
       newRow
