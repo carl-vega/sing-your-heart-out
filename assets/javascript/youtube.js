@@ -3,6 +3,7 @@ var counter = 0;
 
 var artist = "";
 var track = "";
+var trackId = "";
 
 var submitFunction = function (event) {
     event.preventDefault();  
@@ -24,6 +25,7 @@ var submitFunction = function (event) {
 $(document).on("click", ".option-button", function (event) {
     artist = $(this).attr('data-artist');
     track = $(this).attr('data-track');
+    trackId = $(this).attr('data-trackid');
     $('#top-3').removeClass('hide');
     $('#search-returns').addClass('hide');
     $('#search-field').val("");

@@ -15,6 +15,7 @@ $('#favorite-button').on('click', function(){
     database.ref().push({
         artist: artist,
         track: track,
+        trackid: trackId,
     });
 });
 
