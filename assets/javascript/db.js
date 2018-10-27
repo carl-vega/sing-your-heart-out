@@ -24,11 +24,13 @@ database.ref().on('child_added', function(childSnapshot){
     let favArtist = childSnapshot.val().artist;
     let favTrack = childSnapshot.val().track;
     let key = childSnapshot.key;
+    let trackId = childSnapshot.val().trackid;
 
     let favListItem = $('<li>');
     let favTag = $('<a>');
     favTag.addClass('favorites-button waves-effect waves-red btn-flat');
     favTag.attr('data-artist', favArtist);
+    favTag.attr('data-trackid', trackId);
     favTag.attr('data-track', favTrack);
     favTag.attr('data-key', key);
     favTag.text(favArtist +' - '+ favTrack);
@@ -54,11 +56,13 @@ database.ref().on('child_added', function(childSnapshot){
     let favArtist = childSnapshot.val().artist;
     let favTrack = childSnapshot.val().track;
     let key = childSnapshot.key;
+    let trackId = childSnapshot.val().trackid;
 
     let favListItem = $('<li>');
     let favTag = $('<a>');
     favTag.addClass('favorites-button waves-effect waves-red btn-flat');
     favTag.attr('data-artist', favArtist);
+    favTag.attr('data-trackid', trackId);
     favTag.attr('data-track', favTrack);
     favTag.attr('data-key', key);
     favTag.text(favArtist +' - '+ favTrack);
