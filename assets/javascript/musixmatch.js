@@ -52,10 +52,12 @@ $("#search-1").on("submit", function(event) {
   });
 });
 
-$(document).on("click", ".option-button", function(event) {
+$(document).on("click", ".option-button, .favorites-button", function(event) {
 
   var id = $(this).attr("data-id");
   console.log(id);
+
+  $("#lyrics").empty();
 
   $.ajax({
     type: "GET",

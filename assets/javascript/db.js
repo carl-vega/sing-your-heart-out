@@ -28,9 +28,9 @@ database.ref().on('child_added', function(childSnapshot){
 
     let favListItem = $('<li>');
     let favTag = $('<a>');
-    favTag.addClass('favorites-button waves-effect waves-red btn-flat');
+    favTag.addClass('f-button waves-effect waves-red btn-flat');
     favTag.attr('data-artist', favArtist);
-    favTag.attr('data-trackid', trackId);
+    favTag.attr('data-id', trackId);
     favTag.attr('data-track', favTrack);
     favTag.attr('data-key', key);
     favTag.text(favArtist +' - '+ favTrack);
@@ -62,7 +62,7 @@ database.ref().on('child_added', function(childSnapshot){
     let favTag = $('<a>');
     favTag.addClass('favorites-button waves-effect waves-red btn-flat');
     favTag.attr('data-artist', favArtist);
-    favTag.attr('data-trackid', trackId);
+    favTag.attr('data-id', trackId);
     favTag.attr('data-track', favTrack);
     favTag.attr('data-key', key);
     favTag.text(favArtist +' - '+ favTrack);
