@@ -20,23 +20,26 @@ $('#favorite-button').on('click', function(){
 
 database.ref().on('child_added', function(childSnapshot){
     console.log(childSnapshot.val());
-    let favArtist = childSpapshot.val().artist;
-    let favTrack = childSpapshot.val().track;
-    let key = childSpapshot.key;
+    let favArtist = childSnapshot.val().artist;
+    let favTrack = childSnapshot.val().track;
+    let key = childSnapshot.key;
 
+    let favListItem = $('<li>');
     let favTag = $('<a>');
     favTag.addClass('favorites-button waves-effect waves-red btn-flat');
     favTag.attr('data-artist', favArtist);
     favTag.attr('data-track', favTrack);
     favTag.attr('data-key', key);
     favTag.text(favArtist +' - '+ favTrack);
+    favListItem.append(favTag);
 
-    $('#favorites-area').prepend(favTag);
+    $('#slide-out').append(favListItem);
 });
 
 $(document).on('click', '.favorites-button', function (event) {
     artist = $(this).attr('data-artist');
     track = $(this).attr('data-track');
+    $('#slide-out').hide();
     $('#top-3').removeClass('hide');
     $('#favorites-bar').addClass('hide');
     $('#search-field').val("");
